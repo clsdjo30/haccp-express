@@ -315,3 +315,11 @@ export function initializeCleaningDemoData(): void {
 export function hasCleaningDemoData(): boolean {
   return storage.contains(STORAGE_KEYS.EQUIPMENTS);
 }
+
+/**
+ * Clear demo data
+ */
+export function clearCleaningDemoData(): void {
+  storage.delete(STORAGE_KEYS.EQUIPMENTS);
+  storage.delete(STORAGE_KEYS.CLEANING_VALIDATIONS);
+}

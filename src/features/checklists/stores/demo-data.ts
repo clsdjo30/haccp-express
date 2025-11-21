@@ -164,3 +164,11 @@ export function initializeDemoData(): void {
 export function hasDemoData(): boolean {
   return storage.contains(STORAGE_KEYS.CHECKLISTS);
 }
+
+/**
+ * Clear demo data
+ */
+export function clearDemoData(): void {
+  storage.delete(STORAGE_KEYS.CHECKLISTS);
+  storage.delete(STORAGE_KEYS.CHECKLIST_ENTRIES);
+}

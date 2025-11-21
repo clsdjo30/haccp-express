@@ -19,4 +19,9 @@ export * from './screens';
 export * from './stores';
 
 // Utilities
+export {
+  clearCleaningDemoData as clearDemoData,
+  hasCleaningDemoData as hasDemoData,
+  initializeCleaningDemoData as initializeDemoData,
+} from './stores/demo-data';
 export * from './utils';

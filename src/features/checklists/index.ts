@@ -17,4 +17,8 @@ export * from './screens';
 
 // Stores
 export { useChecklistStore } from './stores/checklist-store';
-export { hasDemoData, initializeDemoData } from './stores/demo-data';
+export {
+  clearDemoData,
+  hasDemoData,
+  initializeDemoData,
+} from './stores/demo-data';

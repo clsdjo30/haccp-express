@@ -39,21 +39,31 @@ export type AppTheme = (typeof AppTheme)[keyof typeof AppTheme];
  * User settings
  */
 export type UserSettings = {
-  name: string;
-  role: UserRole;
+  name?: string;
+  role?: UserRole;
   photoUrl?: string;
   pin?: string; // Encrypted PIN code
   biometryEnabled: boolean;
+  theme: AppTheme;
+  language: AppLanguage;
+  notificationsEnabled: boolean;
+  soundEnabled: boolean;
 };
 
 /**
  * Restaurant settings
  */
 export type RestaurantSettings = {
-  name: string;
+  restaurantName: string;
+  name?: string;
   address?: string;
   phone?: string;
+  email?: string;
+  siret?: string;
   logoUrl?: string;
+  defaultPrintCopies: number;
+  autoSync: boolean;
+  syncInterval: number;
 };
 
 /**
