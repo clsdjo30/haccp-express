@@ -3,6 +3,7 @@
  * Optimized input for temperature entry with visual feedback
  */
 
+/* eslint-disable max-lines-per-function */
 import * as React from 'react';
 import { Controller } from 'react-hook-form';
 

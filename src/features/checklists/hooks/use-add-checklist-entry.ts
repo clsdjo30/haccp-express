@@ -2,6 +2,7 @@
  * Hook to add checklist entry
  */
 
+/* eslint-disable max-params */
 import { useState } from 'react';
 
 import { useChecklistStore } from '../stores/checklist-store';

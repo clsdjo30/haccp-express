@@ -3,6 +3,8 @@
  * Manages checklists and their entries with MMKV persistence
  */
 
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-params */
 import { create } from 'zustand';
 
 import { STORAGE_KEYS } from '@/lib/constants';
@@ -67,7 +69,7 @@ export const useChecklistStore = create<ChecklistStore>((set, get) => ({
         : [];
 
       set({ checklists, entries, isLoading: false });
-    } catch (error) {
+    } catch (_error) {
       set({
         error: 'Erreur lors du chargement des checklists',
         isLoading: false,

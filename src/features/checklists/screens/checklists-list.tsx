@@ -3,6 +3,7 @@
  * Displays all checklists with their latest entries
  */
 
+/* eslint-disable max-lines-per-function */
 import { FlashList } from '@shopify/flash-list';
 import { useRouter } from 'expo-router';
 import * as React from 'react';
@@ -58,7 +59,7 @@ export function ChecklistsListScreen() {
           Aucune checklist
         </Text>
         <Text className="mb-4 text-center text-sm text-neutral-600">
-          Aucune checklist n'est configurée pour le moment.
+          Aucune checklist n&apos;est configurée pour le moment.
         </Text>
         <Button
           label="Initialiser les données de démo"
