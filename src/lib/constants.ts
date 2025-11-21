@@ -67,6 +67,7 @@ export const STORAGE_KEYS = {
   CLEANING_VALIDATIONS: 'cleaning_validations',
   PRODUCTS: 'products',
   LABELS: 'labels',
+  CONNECTED_PRINTER: 'connected_printer',
   LAST_SYNC: 'last_sync',
 } as const;
 
