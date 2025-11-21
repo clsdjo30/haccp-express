@@ -1,11 +1,11 @@
-import { Link, Redirect, SplashScreen, Tabs } from 'expo-router';
+import { Redirect, SplashScreen, Tabs } from 'expo-router';
 import React, { useCallback, useEffect } from 'react';
 
-import { Pressable, Text } from '@/components/ui';
 import {
-  Feed as FeedIcon,
+  Checklist as ChecklistIcon,
+  Label as LabelIcon,
+  QrCode as QrCodeIcon,
   Settings as SettingsIcon,
-  Style as StyleIcon,
 } from '@/components/ui/icons';
 import { useAuth, useIsFirstTime } from '@/lib';
 
@@ -32,28 +32,36 @@ export default function TabLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="index"
+        name="checklists"
         options={{
-          title: 'Feed',
-          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
-          headerRight: () => <CreateNewPostLink />,
-          tabBarButtonTestID: 'feed-tab',
+          title: 'Checklists',
+          tabBarIcon: ({ color }) => <ChecklistIcon color={color} />,
+          tabBarButtonTestID: 'checklists-tab',
         }}
       />
 
       <Tabs.Screen
-        name="style"
+        name="cleaning"
         options={{
-          title: 'Style',
-          headerShown: false,
-          tabBarIcon: ({ color }) => <StyleIcon color={color} />,
-          tabBarButtonTestID: 'style-tab',
+          title: 'Nettoyage',
+          tabBarIcon: ({ color }) => <QrCodeIcon color={color} />,
+          tabBarButtonTestID: 'cleaning-tab',
         }}
       />
+
+      <Tabs.Screen
+        name="labels"
+        options={{
+          title: 'Étiquettes',
+          tabBarIcon: ({ color }) => <LabelIcon color={color} />,
+          tabBarButtonTestID: 'labels-tab',
+        }}
+      />
+
       <Tabs.Screen
         name="settings"
         options={{
-          title: 'Settings',
+          title: 'Paramètres',
           headerShown: false,
           tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
           tabBarButtonTestID: 'settings-tab',
@@ -62,13 +70,3 @@ export default function TabLayout() {
     </Tabs>
   );
 }
-
-const CreateNewPostLink = () => {
-  return (
-    <Link href="/feed/add-post" asChild>
-      <Pressable>
-        <Text className="px-3 text-primary-300">Create</Text>
-      </Pressable>
-    </Link>
-  );
-};
